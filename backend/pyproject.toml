@@ -4,6 +4,8 @@ version = "0.1.0"
 readme = "README.md"
 requires-python = "~=3.13.0"
 dependencies = [
+    "httpx>=0.28.1",
+    "python-jose[cyptography]>=3.5.0",
     "ruff>=0.17.0",
 ]
 
