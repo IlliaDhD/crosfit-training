@@ -12,6 +12,10 @@ class Settings:
     KEYCLOAK_CLIENT_ID: str
     KEYCLOAK_ADMIN_ROLE: str
 
+    # MongoDB
+    MONGO_URL: str
+    MONGO_DB_NAME: str
+
     @property
     def KEYCLOAK_JWKS_URL(self) -> str:
         return (
@@ -37,6 +41,8 @@ def get_settings() -> Settings:
             KEYCLOAK_REALM=getenv("KEYCLOAK_REALM"),
             KEYCLOAK_CLIENT_ID=getenv("KEYCLOAK_CLIENT_ID"),
             KEYCLOAK_ADMIN_ROLE=getenv("KEYCLOAK_ADMIN_ROLE_NAME"),
+            MONGO_URL=getenv("MONGO_URL", "mongodb://localhost:27017"),
+            MONGO_DB_NAME=getenv("MONGO_DB_NAME", "crossfit"),
         )
 
     return _settings
